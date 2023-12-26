@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol Endpoint {
     func getEndpoint() -> String
-    var method: String { get }
+    var method: HTTPMethod { get }
+    var headers: HTTPHeaders { get }
+    var authRequired: Bool { get }
 }
 
 enum AuthEndpoint: Endpoint {
@@ -25,21 +28,30 @@ enum AuthEndpoint: Endpoint {
         }
     }
     
-    var method: String {
+    var method: HTTPMethod {
         switch self {
         case .login, .register:
-            return "POST"
+            return .post
         }
     }
     
-    var endpointBase: String {
+    var headers: HTTPHeaders {
+        switch self {
+        case .login, .register:
+            return [.accept("application/json")]
+        }
+    }
+    
+    var authRequired: Bool { false }
+    
+    private var endpointBase: String {
         "auth/"
     }
 }
 
 enum LocationEndpoint: Endpoint {
     case fetchLocations
-    case getLocationById(id: Int)
+    case getLocationById(id: Int32)
     
     func getEndpoint() -> String {
         switch self {
@@ -50,10 +62,19 @@ enum LocationEndpoint: Endpoint {
         }
     }
     
-    var method: String {
+    var method: HTTPMethod {
         switch self {
-        case .fetchLocations, .getLocationById(_):
-            return "GET"
+        case .fetchLocations, .getLocationById:
+            return .get
         }
     }
+    
+    var headers: HTTPHeaders {
+        switch self {
+        case .getLocationById, .fetchLocations:
+            return [.accept("application/json")]
+        }
+    }
+    
+    var authRequired: Bool { true }
 }
