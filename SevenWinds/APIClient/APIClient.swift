@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 
 protocol APIClient {
-    func sendRequest<T: Encodable, U: Decodable>(with endpoint: Endpoint, parameters: [T]?, completion: @escaping (Result<U, AFError>) -> Void)
+    func sendRequest<T: Encodable, U: Decodable>(with endpoint: Endpoint, parameters: T?, responseType: U.Type, completion: @escaping (Result<U, AFError>) -> Void)
 }
 
 final class SevenWindsAPIClient: APIClient {
@@ -27,7 +27,7 @@ final class SevenWindsAPIClient: APIClient {
         self.client = client
     }
     
-    public func sendRequest<T: Encodable, U: Decodable>(with endpoint: Endpoint, parameters: [T]? = nil, completion: @escaping (Result<U, AFError>) -> Void) {
+    public func sendRequest<T: Encodable, U: Decodable>(with endpoint: Endpoint, parameters: T? = nil, responseType: U.Type, completion: @escaping (Result<U, AFError>) -> Void) {
         // Единственный false, по которому можно отлететь - auth required, но token == nil
         guard !endpoint.authRequired || token != nil else {
             completion(.failure(.sessionTaskFailed(error: SevenWindsAPIError.authNotProvided)))
@@ -40,14 +40,14 @@ final class SevenWindsAPIClient: APIClient {
         }
         
         var headers = endpoint.headers
-        var completion = completion
+        var additionalCompletion = completion
         
         // был guard, на котором проверили, что если нужен - токен точно есть
         if endpoint.authRequired {
             headers.add(.authorization(bearerToken: token!))
         } else {
             // если токен был нужен, но его не оказалось - пробуем подцепить из респонсов
-            completion = { [weak self] result in
+            additionalCompletion = { [weak self] result in
                 if case .success = result,
                    let auth = try? result.get() as? AuthResponse {
                     self?.token = auth.token
@@ -66,7 +66,7 @@ final class SevenWindsAPIClient: APIClient {
                        headers: headers)
         .validate()
         .responseDecodable(of: U.self) {response in
-            completion(response.result)
+            additionalCompletion(response.result)
         }
     }
     

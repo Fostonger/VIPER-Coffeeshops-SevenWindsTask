@@ -37,25 +37,37 @@ final class UserDefaultAppState: AppStateService {
     }
     
     private func fetchCredentials() {
-        userCredentials = credentialsStorage.object(forKey: "user_credentials") as? Credentials
+        if let data = UserDefaults.standard.object(forKey: UserDefaultKeys.tokenExpiration.rawValue) as? Data,
+           let credentials = try? JSONDecoder().decode(Credentials.self, from: data) {
+             userCredentials = credentials
+        }
     }
     
     private func fetchToken() {
-        token = credentialsStorage.object(forKey: "token") as? String
-        expirationDate = credentialsStorage.object(forKey: "token_expiration") as? Date
+        token = credentialsStorage.object(forKey: UserDefaultKeys.token.rawValue) as? String
+        expirationDate = credentialsStorage.object(forKey: UserDefaultKeys.tokenExpiration.rawValue) as? Date
     }
     
     func setCredentials(_ credentials: Credentials) {
-        credentialsStorage.setValue(credentials, forKey: "user_credentials")
+        if let encoded = try? JSONEncoder().encode(credentials) {
+            credentialsStorage.set(encoded, forKey: UserDefaultKeys.userCredentials.rawValue)
+        }
         userCredentials = credentials
     }
     
     func setToken(_ token: String, expirationDate: Int32? = nil) {
-        credentialsStorage.setValue(token, forKey: "token")
+        credentialsStorage.setValue(token, forKey: UserDefaultKeys.token.rawValue)
         if let expirationDate = expirationDate {
-            credentialsStorage.setValue(Date.now + TimeInterval(expirationDate), forKey: "token_expiration")
+            credentialsStorage.setValue(Date.now + TimeInterval(expirationDate),
+                                        forKey: UserDefaultKeys.tokenExpiration.rawValue)
             self.expirationDate = Date.now + TimeInterval(expirationDate)
         }
         self.token = token
+    }
+    
+    enum UserDefaultKeys: String {
+        case tokenExpiration = "token_expiration"
+        case userCredentials = "user_credentials"
+        case token = "token"
     }
 }
