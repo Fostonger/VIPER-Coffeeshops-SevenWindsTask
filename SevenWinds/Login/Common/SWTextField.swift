@@ -38,7 +38,7 @@ class SWTextFieldView: UIView {
     let textFieldTitle: UILabel = {
         let label = UILabel()
         label.font = SevenWindsFonts.sfUiDisplay(weight: 300).font
-        label.tintColor = SevenWindsColors.brown.uiColor
+        label.textColor = SevenWindsColors.brown.uiColor
         return label
     }()
     
