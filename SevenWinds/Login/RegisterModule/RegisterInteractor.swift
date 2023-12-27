@@ -21,7 +21,7 @@ class RegisterInteractor: RegisterPresenterToInteractorProtocol {
     
     func register(with credentials: Credentials) {
         APIClient?.sendRequest(with: AuthEndpoint.register,
-                               parameters: [credentials]) { [weak self] (response: Result<AuthResponse, AFError>) in
+                               parameters: credentials, responseType: AuthResponse.self) { [weak self] response in
             switch response {
             case .success(let auth):
                 self?.credentialsService.setCredentials(credentials)

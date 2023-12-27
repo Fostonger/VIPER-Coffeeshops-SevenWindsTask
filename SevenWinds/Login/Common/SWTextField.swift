@@ -31,7 +31,9 @@ class SWTextFieldView: UIView {
         field.layer.borderColor = SevenWindsColors.brown.uiColor.cgColor
         field.layer.borderWidth = 2
         field.layer.cornerRadius = 23
+        field.autocapitalizationType = .none
         field.font = SevenWindsFonts.sfUiDisplay(weight: 300).font
+        field.textColor = SevenWindsColors.brown.uiColor
         return field
     }()
     

@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         loginButton.isEnabled = false
         passwordTextField.inputTextView.delegate = self
         passwordTextField.inputTextView.textContentType = .password
-        passwordTextField.inputTextView.isSecureTextEntry = true
+//        passwordTextField.inputTextView.isSecureTextEntry = true
         emailTextField.inputTextView.delegate = self
     }
     

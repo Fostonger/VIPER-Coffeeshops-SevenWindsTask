@@ -20,7 +20,7 @@ class LoginInteractor: LoginPresenterToInteractorProtocol {
     
     func login(with credentials: Credentials) {
         APIClient?.sendRequest(with: AuthEndpoint.login,
-                               parameters: [credentials]) { [weak self] (response: Result<AuthResponse, AFError>) in
+                               parameters: credentials, responseType: AuthResponse.self) { [weak self] response in
             switch response {
             case .success(let auth):
                 self?.presenter?.success(with: credentials)
