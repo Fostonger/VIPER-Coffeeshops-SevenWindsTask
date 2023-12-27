@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>sf-ui-display-900.otf</string>
+		<string>sf-ui-display-800.otf</string>
+		<string>sf-ui-display-700.otf</string>
+		<string>sf-ui-display-600.otf</string>
+		<string>sf-ui-display-500.otf</string>
+		<string>sf-ui-display-100.otf</string>
+		<string>sf-ui-display-200.otf</string>
+		<string>sf-ui-display-300.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
