@@ -15,6 +15,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        view.backgroundColor = .white
     }
     
     private func setupUI() {
@@ -51,6 +52,10 @@ class RegisterViewController: UIViewController {
             make.top.equalTo(confirmPasswordTextField.snp.bottom).offset(30)
         }
         
+        emailTextField.setupView(placeholder: "example@gmail.com", labelText: LoginLocalization.email.localized)
+        passwordTextField.setupView(placeholder: "*****", labelText: LoginLocalization.password.localized)
+        confirmPasswordTextField.setupView(placeholder: "*****", labelText: LoginLocalization.confirmPassword.localized)
+        
         navigationItem.title = LoginLocalization.registerTitle.localized
         registerButton.setTitle(LoginLocalization.registerButtonTitle.localized, for: .normal)
         registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
@@ -70,27 +75,43 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == confirmPasswordTextField.inputTextView {
-            confirmPasswordTextField.inputTextView.backgroundColor = .systemBackground
+        let passwordConfirmed: Bool
+        var firstTF = (textField.text?.count ?? 0) - range.length + string.count
+        let secondTF: Int
+        
+        let text = textField.text ?? ""
+        let lowerRangeBound = text.index(text.startIndex, offsetBy: range.lowerBound)
+        let upperRangeBound = text.index(text.startIndex, offsetBy: range.upperBound)
+        
+        let newText = text.replacingCharacters(
+            in: lowerRangeBound..<upperRangeBound,
+            with: string
+        )
+        
+        switch textField {
+        case emailTextField.inputTextView:
+            secondTF = passwordTextField.inputTextView.text?.count ?? 0
+            passwordConfirmed = confirmPasswordTextField.inputTextView.text ==  passwordTextField.inputTextView.text
+            setPasswordErrorColor(isPasswordValid: true)
+        case passwordTextField.inputTextView:
+            secondTF = emailTextField.inputTextView.text?.count ?? 0
+            passwordConfirmed = confirmPasswordTextField.inputTextView.text == newText
+            let confirmPasswordIsEmpty = confirmPasswordTextField.inputTextView.text?.isEmpty ?? true
+            setPasswordErrorColor(isPasswordValid: passwordConfirmed || confirmPasswordIsEmpty)
+        default:
+            passwordConfirmed = passwordTextField.inputTextView.text == newText
+            secondTF = emailTextField.inputTextView.text?.count ?? 0
+            firstTF = passwordTextField.inputTextView.text?.count ?? 0
+            setPasswordErrorColor(isPasswordValid: passwordConfirmed || newText.isEmpty)
         }
         
+        registerButton.isEnabled = firstTF > 0 && secondTF > 0 && passwordConfirmed
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let passwordConfirmed = confirmPasswordTextField.inputTextView.text ==  passwordTextField.inputTextView.text
-        switch textField {
-        case emailTextField.inputTextView:
-            credentials = Credentials(password: credentials.password, login: emailTextField.inputTextView.text ?? "")
-        case passwordTextField.inputTextView:
-            credentials = Credentials(password: credentials.password, login: passwordTextField.inputTextView.text ?? "")
-        case confirmPasswordTextField.inputTextView:
-            confirmPasswordTextField.inputTextView.backgroundColor = passwordConfirmed ? .systemBackground : .red
-        default:
-            return
-        }
-        
-        registerButton.isEnabled = passwordConfirmed && !credentials.password.isEmpty && !credentials.login.isEmpty
+    private func setPasswordErrorColor(isPasswordValid: Bool) {
+        confirmPasswordTextField.inputTextView.backgroundColor = isPasswordValid ? .systemBackground : .red
+        passwordTextField.inputTextView.backgroundColor = isPasswordValid ? .systemBackground : .red
     }
 }
 

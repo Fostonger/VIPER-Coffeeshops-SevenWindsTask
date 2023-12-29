@@ -10,8 +10,8 @@ class LoginViewController: UIViewController {
     private let loginButton = SWButton()
     private let openRegisterButton: UIButton = {
         let button = UIButton()
-        button.tintColor = SevenWindsColors.lightBrown.uiColor
-        button.titleLabel?.font = SevenWindsFonts.sfUiDisplay(weight: 200).font
+        button.setTitleColor(SevenWindsColors.brown.uiColor, for: .normal)
+        button.titleLabel?.font = SevenWindsFonts.sfUiDisplay.bold
         button.setTitle(LoginLocalization.createAccount.localized, for: .normal)
         return button
     }()
@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
         view.addSubview(loginButton)
+        view.addSubview(openRegisterButton)
         
         emailTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(18)
@@ -50,13 +51,19 @@ class LoginViewController: UIViewController {
             make.top.equalTo(passwordTextField.snp.bottom).offset(30)
         }
         
+        openRegisterButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.snp_bottomMargin).offset(-36)
+            make.centerX.equalToSuperview()
+        }
+        
         navigationItem.title = LoginLocalization.loginTitle.localized
         loginButton.setTitle(LoginLocalization.loginButtonTitle.localized, for: .normal)
         loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        openRegisterButton.addTarget(self, action: #selector(openRegistration), for: .touchUpInside)
         loginButton.isEnabled = false
         passwordTextField.inputTextView.delegate = self
         passwordTextField.inputTextView.textContentType = .password
-//        passwordTextField.inputTextView.isSecureTextEntry = true
+        passwordTextField.inputTextView.isSecureTextEntry = true
         emailTextField.inputTextView.delegate = self
     }
     
@@ -64,6 +71,10 @@ class LoginViewController: UIViewController {
         let credentials = Credentials(password: passwordTextField.inputTextView.text ?? "",
                                       login: emailTextField.inputTextView.text ?? "")
         presenter?.login(with: credentials)
+    }
+    
+    @objc private func openRegistration() {
+        presenter?.pushToRegistration()
     }
 }
 

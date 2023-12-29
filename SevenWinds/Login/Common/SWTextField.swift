@@ -32,14 +32,14 @@ class SWTextFieldView: UIView {
         field.layer.borderWidth = 2
         field.layer.cornerRadius = 23
         field.autocapitalizationType = .none
-        field.font = SevenWindsFonts.sfUiDisplay(weight: 300).font
+        field.font = SevenWindsFonts.sfUiDisplay.font
         field.textColor = SevenWindsColors.brown.uiColor
         return field
     }()
     
     let textFieldTitle: UILabel = {
         let label = UILabel()
-        label.font = SevenWindsFonts.sfUiDisplay(weight: 300).font
+        label.font = SevenWindsFonts.sfUiDisplay.font
         label.textColor = SevenWindsColors.brown.uiColor
         return label
     }()

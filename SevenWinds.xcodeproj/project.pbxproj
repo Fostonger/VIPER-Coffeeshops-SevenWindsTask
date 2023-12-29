@@ -44,6 +44,8 @@
 		05B894FD2B3B44D2006301A2 /* sf-ui-display-800.otf in Resources */ = {isa = PBXBuildFile; fileRef = 05B894F52B3B44D2006301A2 /* sf-ui-display-800.otf */; };
 		05B895002B3B5ABE006301A2 /* SWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B894FF2B3B5ABE006301A2 /* SWTextField.swift */; };
 		05B895022B3B6E63006301A2 /* SWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B895012B3B6E63006301A2 /* SWButton.swift */; };
+		05B895092B3EEF38006301A2 /* CoffeshopsListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B895082B3EEF38006301A2 /* CoffeshopsListContracts.swift */; };
+		05B8950B2B3EF226006301A2 /* CoffeeshopsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8950A2B3EF226006301A2 /* CoffeeshopsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		05B894F52B3B44D2006301A2 /* sf-ui-display-800.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf-ui-display-800.otf"; sourceTree = "<group>"; };
 		05B894FF2B3B5ABE006301A2 /* SWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTextField.swift; sourceTree = "<group>"; };
 		05B895012B3B6E63006301A2 /* SWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWButton.swift; sourceTree = "<group>"; };
+		05B895082B3EEF38006301A2 /* CoffeshopsListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeshopsListContracts.swift; sourceTree = "<group>"; };
+		05B8950A2B3EF226006301A2 /* CoffeeshopsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		05B8949C2B39E85A006301A2 /* SevenWinds */ = {
 			isa = PBXGroup;
 			children = (
+				05B895062B3EEF04006301A2 /* MainPage */,
 				05B894EC2B3B44AE006301A2 /* Resources */,
 				05B894E12B3B3084006301A2 /* Localization */,
 				05B894D62B39EAD4006301A2 /* APIClient */,
@@ -224,6 +229,23 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		05B895062B3EEF04006301A2 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				05B895072B3EEF12006301A2 /* CoffeeshopsList */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		05B895072B3EEF12006301A2 /* CoffeeshopsList */ = {
+			isa = PBXGroup;
+			children = (
+				05B895082B3EEF38006301A2 /* CoffeshopsListContracts.swift */,
+				05B8950A2B3EF226006301A2 /* CoffeeshopsListViewController.swift */,
+			);
+			path = CoffeeshopsList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,8 +348,10 @@
 				05B894C52B39EA31006301A2 /* LoginContracts.swift in Sources */,
 				05B894D82B39EC2B006301A2 /* APIEndpoint.swift in Sources */,
 				05B894DA2B3A0BD7006301A2 /* APIClient.swift in Sources */,
+				05B895092B3EEF38006301A2 /* CoffeshopsListContracts.swift in Sources */,
 				05B895002B3B5ABE006301A2 /* SWTextField.swift in Sources */,
 				05B894EB2B3B4448006301A2 /* UIFont+SevenWinds.swift in Sources */,
+				05B8950B2B3EF226006301A2 /* CoffeeshopsListViewController.swift in Sources */,
 				05B894D42B39EA65006301A2 /* RegisterPresenter.swift in Sources */,
 				05B8949E2B39E85A006301A2 /* AppDelegate.swift in Sources */,
 				05B894C32B39EA31006301A2 /* LoginViewController.swift in Sources */,

@@ -9,19 +9,26 @@ import Foundation
 import UIKit
 
 enum SevenWindsFonts {
-    case sfUiDisplay(weight: Int)
+    case sfUiDisplay
     
     var font: UIFont? {
         switch self {
         case .sfUiDisplay:
-            return UIFont(name: fontName, size: UIFont.labelFontSize)
+            return UIFont(name: fontName + "-Semibold", size: 15)
+        }
+    }
+    
+    var bold: UIFont? {
+        switch self {
+        case .sfUiDisplay:
+            return UIFont(name: fontName + "-Heavy", size: 15)
         }
     }
     
     private var fontName: String {
         switch self {
-        case .sfUiDisplay(let weight):
-            return "sf-ui-display-\(weight).otf"
+        case .sfUiDisplay:
+            return "SFUIDisplay"
         }
     }
 }

@@ -28,6 +28,18 @@ class LoginRouter: LoginPresenterToRouterProtocol {
         presenter.router = router
         interactor.presenter = presenter
         
+        if let customFont = SevenWindsFonts.sfUiDisplay.bold {
+            navigationController.navigationBar.titleTextAttributes = [
+                .font: customFont.withSize(18),
+                .foregroundColor: SevenWindsColors.brown.uiColor
+            ]
+        } else {
+            navigationController.navigationBar.titleTextAttributes = [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .bold),
+                NSAttributedString.Key.foregroundColor: SevenWindsColors.brown.uiColor
+            ]
+        }
+        
         return navigationController
     }
     

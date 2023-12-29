@@ -41,6 +41,6 @@ class SWButton: UIButton {
     
     private func setupUI() {
         layer.cornerRadius = 24
-        titleLabel?.font = SevenWindsFonts.sfUiDisplay(weight: 700).font
+        titleLabel?.font = SevenWindsFonts.sfUiDisplay.bold
     }
 }
