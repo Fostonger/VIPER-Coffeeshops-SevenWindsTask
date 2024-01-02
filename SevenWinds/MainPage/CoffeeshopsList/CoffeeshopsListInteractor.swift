@@ -5,28 +5,40 @@
 //  Created by Булат Мусин on 29.12.2023.
 //
 
-class CoffeeshopListInteractor: CoffeeshopListPresenterToInteractorProtocol {
+class CoffeeshopsListInteractor: CoffeeshopsListPresenterToInteractorProtocol {
+    var presenter: CoffeeshopsListInteractorToPresenter?
+    
     var APIClient: APIClient?
     private var credentialsService: AppStateService
+    private var locations: [Location] = []
     
     init(APIClient: APIClient? = nil, credentialsService: AppStateService) {
         self.APIClient = APIClient
         self.credentialsService = credentialsService
     }
     
-    var presenter: LoginInteractorToPresenter?
-    
-    func login(with credentials: Credentials) {
-        APIClient?.sendRequest(with: AuthEndpoint.login,
-                               parameters: credentials, responseType: AuthResponse.self) { [weak self] response in
+    func loadCoffeeshops() {
+        APIClient?.sendRequest(with: LocationEndpoint.fetchLocations,
+                               responseType: [Location].self) { [weak self] response in
             switch response {
-            case .success(let auth):
-                self?.presenter?.success(with: credentials)
-                self?.credentialsService.setCredentials(credentials)
-                self?.credentialsService.setToken(auth.token, expirationDate: auth.tokenLifetime)
+            case .success(let locations):
+                self?.locations = locations
+                self?.presenter?.fetchCoffeeshopsSuccess()
             case .failure(let failure):
-                self?.presenter?.fail(errorMessage: failure.localizedDescription)
+                self?.presenter?.fetchCoffeeshopsFailure(errorMessage: failure.localizedDescription)
             }
         }
     }
+    
+    func retrieveCoffeeshop(at index: Int) -> Location? {
+        guard locations.count > index else {
+            return nil
+        }
+        return locations[index]
+    }
+    
+    func getCoffeeshopsCount() -> Int {
+        locations.count
+    }
+    
 }
