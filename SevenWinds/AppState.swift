@@ -10,6 +10,7 @@ import Foundation
 protocol AppStateService {
     var userCredentials: Credentials? { get }
     var token: String? { get }
+    var expirationDate: Date? { get }
     func setCredentials(_ credentials: Credentials)
     func setToken(_ token: String, expirationDate: Int32?)
 }
@@ -27,17 +28,18 @@ final class UserDefaultAppState: AppStateService {
             _token = newValue
         }
     }
+    private (set) var expirationDate: Date?
     private var _token: String?
-    private var expirationDate: Date?
     private let credentialsStorage: UserDefaults
     
     init(with credentialsStorage: UserDefaults) {
         self.credentialsStorage = credentialsStorage
         fetchCredentials()
+        fetchToken()
     }
     
     private func fetchCredentials() {
-        if let data = UserDefaults.standard.object(forKey: UserDefaultKeys.tokenExpiration.rawValue) as? Data,
+        if let data = UserDefaults.standard.object(forKey: UserDefaultKeys.userCredentials.rawValue) as? Data,
            let credentials = try? JSONDecoder().decode(Credentials.self, from: data) {
              userCredentials = credentials
         }

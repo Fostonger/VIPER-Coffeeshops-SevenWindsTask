@@ -1,5 +1,57 @@
 {
   "sourceLanguage" : "ru",
-  "strings" : {},
+  "strings" : {
+    "Coffeeshop distance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "meters from you"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "м от вас"
+          }
+        }
+      }
+    },
+    "Nearby coffeeshops" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nearby coffee"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ближайшие кофейни"
+          }
+        }
+      }
+    },
+    "On map" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show on map"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На карте"
+          }
+        }
+      }
+    }
+  },
   "version" : "1.0"
 }

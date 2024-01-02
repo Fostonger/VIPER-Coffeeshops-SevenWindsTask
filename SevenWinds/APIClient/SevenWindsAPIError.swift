@@ -9,4 +9,6 @@ import Foundation
 
 enum SevenWindsAPIError: Error {
     case authNotProvided
+    case imageDataError
+    case imageDownloadError
 }
