@@ -46,6 +46,18 @@
 		05B895022B3B6E63006301A2 /* SWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B895012B3B6E63006301A2 /* SWButton.swift */; };
 		05B895092B3EEF38006301A2 /* CoffeshopsListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B895082B3EEF38006301A2 /* CoffeshopsListContracts.swift */; };
 		05B8950B2B3EF226006301A2 /* CoffeeshopsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B8950A2B3EF226006301A2 /* CoffeeshopsListViewController.swift */; };
+		05EED53A2B3F7C0700C2631D /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 05EED5392B3F7C0700C2631D /* PKHUD */; };
+		05EED53F2B3F7C2E00C2631D /* CoffeeshopsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED53B2B3F7C2E00C2631D /* CoffeeshopsListInteractor.swift */; };
+		05EED5402B3F7C2E00C2631D /* CoffeeshopsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED53C2B3F7C2E00C2631D /* CoffeeshopsListPresenter.swift */; };
+		05EED5412B3F7C2E00C2631D /* CoffeeshopsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED53D2B3F7C2E00C2631D /* CoffeeshopsListRouter.swift */; };
+		05EED5422B3F7C2E00C2631D /* CoffeeshopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED53E2B3F7C2E00C2631D /* CoffeeshopTableViewCell.swift */; };
+		05EED54A2B433AAA00C2631D /* MenuDetailsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5442B433AA900C2631D /* MenuDetailsContracts.swift */; };
+		05EED54B2B433AAA00C2631D /* MenuDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5452B433AA900C2631D /* MenuDetailsInteractor.swift */; };
+		05EED54C2B433AAA00C2631D /* MenuDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5462B433AA900C2631D /* MenuDetailsRouter.swift */; };
+		05EED54D2B433AAA00C2631D /* MenuDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5472B433AA900C2631D /* MenuDetailsViewController.swift */; };
+		05EED54E2B433AAA00C2631D /* MenuDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5482B433AA900C2631D /* MenuDetailsPresenter.swift */; };
+		05EED54F2B433AAA00C2631D /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5492B433AAA00C2631D /* ItemCollectionViewCell.swift */; };
+		05EED5512B43A80800C2631D /* SevenWinds+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5502B43A80800C2631D /* SevenWinds+Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +102,17 @@
 		05B895012B3B6E63006301A2 /* SWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWButton.swift; sourceTree = "<group>"; };
 		05B895082B3EEF38006301A2 /* CoffeshopsListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeshopsListContracts.swift; sourceTree = "<group>"; };
 		05B8950A2B3EF226006301A2 /* CoffeeshopsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListViewController.swift; sourceTree = "<group>"; };
+		05EED53B2B3F7C2E00C2631D /* CoffeeshopsListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListInteractor.swift; sourceTree = "<group>"; };
+		05EED53C2B3F7C2E00C2631D /* CoffeeshopsListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListPresenter.swift; sourceTree = "<group>"; };
+		05EED53D2B3F7C2E00C2631D /* CoffeeshopsListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListRouter.swift; sourceTree = "<group>"; };
+		05EED53E2B3F7C2E00C2631D /* CoffeeshopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeshopTableViewCell.swift; sourceTree = "<group>"; };
+		05EED5442B433AA900C2631D /* MenuDetailsContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailsContracts.swift; sourceTree = "<group>"; };
+		05EED5452B433AA900C2631D /* MenuDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailsInteractor.swift; sourceTree = "<group>"; };
+		05EED5462B433AA900C2631D /* MenuDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailsRouter.swift; sourceTree = "<group>"; };
+		05EED5472B433AA900C2631D /* MenuDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailsViewController.swift; sourceTree = "<group>"; };
+		05EED5482B433AA900C2631D /* MenuDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailsPresenter.swift; sourceTree = "<group>"; };
+		05EED5492B433AAA00C2631D /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		05EED5502B43A80800C2631D /* SevenWinds+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SevenWinds+Image.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EED53A2B3F7C0700C2631D /* PKHUD in Frameworks */,
 				05B894B32B39E8FB006301A2 /* Alamofire in Frameworks */,
 				05B894B62B39E92F006301A2 /* SnapKit in Frameworks */,
 			);
@@ -201,6 +225,7 @@
 			children = (
 				05B894ED2B3B44C2006301A2 /* Fonts */,
 				05B894A62B39E85C006301A2 /* Assets.xcassets */,
+				05EED5502B43A80800C2631D /* SevenWinds+Image.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -232,6 +257,7 @@
 		05B895062B3EEF04006301A2 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				05EED5432B433A8300C2631D /* MenuDetails */,
 				05B895072B3EEF12006301A2 /* CoffeeshopsList */,
 			);
 			path = MainPage;
@@ -240,10 +266,27 @@
 		05B895072B3EEF12006301A2 /* CoffeeshopsList */ = {
 			isa = PBXGroup;
 			children = (
+				05EED53B2B3F7C2E00C2631D /* CoffeeshopsListInteractor.swift */,
+				05EED53C2B3F7C2E00C2631D /* CoffeeshopsListPresenter.swift */,
+				05EED53D2B3F7C2E00C2631D /* CoffeeshopsListRouter.swift */,
+				05EED53E2B3F7C2E00C2631D /* CoffeeshopTableViewCell.swift */,
 				05B895082B3EEF38006301A2 /* CoffeshopsListContracts.swift */,
 				05B8950A2B3EF226006301A2 /* CoffeeshopsListViewController.swift */,
 			);
 			path = CoffeeshopsList;
+			sourceTree = "<group>";
+		};
+		05EED5432B433A8300C2631D /* MenuDetails */ = {
+			isa = PBXGroup;
+			children = (
+				05EED5452B433AA900C2631D /* MenuDetailsInteractor.swift */,
+				05EED5482B433AA900C2631D /* MenuDetailsPresenter.swift */,
+				05EED5462B433AA900C2631D /* MenuDetailsRouter.swift */,
+				05EED5472B433AA900C2631D /* MenuDetailsViewController.swift */,
+				05EED5492B433AAA00C2631D /* ItemCollectionViewCell.swift */,
+				05EED5442B433AA900C2631D /* MenuDetailsContracts.swift */,
+			);
+			path = MenuDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +308,7 @@
 			packageProductDependencies = (
 				05B894B22B39E8FB006301A2 /* Alamofire */,
 				05B894B52B39E92F006301A2 /* SnapKit */,
+				05EED5392B3F7C0700C2631D /* PKHUD */,
 			);
 			productName = SevenWinds;
 			productReference = 05B8949A2B39E85A006301A2 /* SevenWinds.app */;
@@ -298,6 +342,7 @@
 			packageReferences = (
 				05B894B12B39E8FB006301A2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				05B894B42B39E92F006301A2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				05EED5382B3F7C0700C2631D /* XCRemoteSwiftPackageReference "PKHUD" */,
 			);
 			productRefGroup = 05B8949B2B39E85A006301A2 /* Products */;
 			projectDirPath = "";
@@ -336,23 +381,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B894E32B3B3099006301A2 /* Localization.swift in Sources */,
+				05EED54A2B433AAA00C2631D /* MenuDetailsContracts.swift in Sources */,
 				05B894D12B39EA65006301A2 /* RegisterViewController.swift in Sources */,
 				05B894D22B39EA65006301A2 /* RegisterInteractor.swift in Sources */,
 				05B894C42B39EA31006301A2 /* LoginPresenter.swift in Sources */,
+				05EED5512B43A80800C2631D /* SevenWinds+Image.swift in Sources */,
+				05EED53F2B3F7C2E00C2631D /* CoffeeshopsListInteractor.swift in Sources */,
 				05B894E92B3B3DE1006301A2 /* UIColor+SevenWings.swift in Sources */,
 				05B894C22B39EA31006301A2 /* LoginInteractor.swift in Sources */,
+				05EED54C2B433AAA00C2631D /* MenuDetailsRouter.swift in Sources */,
+				05EED5402B3F7C2E00C2631D /* CoffeeshopsListPresenter.swift in Sources */,
 				05B894D32B39EA65006301A2 /* RegisterRouter.swift in Sources */,
 				05B894A22B39E85A006301A2 /* ViewController.swift in Sources */,
 				05B894DE2B3AEF05006301A2 /* AppState.swift in Sources */,
 				05B894E02B3AF372006301A2 /* SevenWindsAPIError.swift in Sources */,
 				05B894C52B39EA31006301A2 /* LoginContracts.swift in Sources */,
+				05EED54B2B433AAA00C2631D /* MenuDetailsInteractor.swift in Sources */,
 				05B894D82B39EC2B006301A2 /* APIEndpoint.swift in Sources */,
 				05B894DA2B3A0BD7006301A2 /* APIClient.swift in Sources */,
 				05B895092B3EEF38006301A2 /* CoffeshopsListContracts.swift in Sources */,
 				05B895002B3B5ABE006301A2 /* SWTextField.swift in Sources */,
 				05B894EB2B3B4448006301A2 /* UIFont+SevenWinds.swift in Sources */,
+				05EED54F2B433AAA00C2631D /* ItemCollectionViewCell.swift in Sources */,
+				05EED5422B3F7C2E00C2631D /* CoffeeshopTableViewCell.swift in Sources */,
 				05B8950B2B3EF226006301A2 /* CoffeeshopsListViewController.swift in Sources */,
 				05B894D42B39EA65006301A2 /* RegisterPresenter.swift in Sources */,
+				05EED5412B3F7C2E00C2631D /* CoffeeshopsListRouter.swift in Sources */,
+				05EED54D2B433AAA00C2631D /* MenuDetailsViewController.swift in Sources */,
+				05EED54E2B433AAA00C2631D /* MenuDetailsPresenter.swift in Sources */,
 				05B8949E2B39E85A006301A2 /* AppDelegate.swift in Sources */,
 				05B894C32B39EA31006301A2 /* LoginViewController.swift in Sources */,
 				05B894C62B39EA31006301A2 /* LoginRouter.swift in Sources */,
@@ -604,6 +660,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		05EED5382B3F7C0700C2631D /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -616,6 +680,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 05B894B42B39E92F006301A2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		05EED5392B3F7C0700C2631D /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05EED5382B3F7C0700C2631D /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -38,3 +38,26 @@ enum LoginLocalization {
         }
     }
 }
+
+enum MainPageLocalization {
+    case distance
+    case nearbyLocationsTitle
+    case onMapButtonTitile
+    case menuTitle
+    case price
+    
+    var localized: String {
+        switch self {
+        case .distance:
+            String(localized: "Coffeeshop distance")
+        case .nearbyLocationsTitle:
+            String(localized: "Nearby coffeeshops")
+        case .onMapButtonTitile:
+            String(localized: "On map")
+        case .menuTitle:
+            String(localized: "Menu")
+        case .price:
+            String(localized: "price")
+        }
+    }
+}

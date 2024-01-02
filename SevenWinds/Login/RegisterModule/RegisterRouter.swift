@@ -13,9 +13,9 @@ class RegisterRouter: RegisterPresenterToRouterProtocol {
     
     static func createModule(loginHandler: @escaping (Credentials) -> (), apiClient: APIClient, credService: AppStateService) -> UIViewController {
         
-        var view = RegisterViewController()
-        var presenter = RegisterPresenter()
-        var interactor = RegisterInteractor(APIClient: apiClient, credentialsService: credService)
+        let view = RegisterViewController()
+        let presenter = RegisterPresenter()
+        let interactor = RegisterInteractor(APIClient: apiClient, credentialsService: credService)
         let router = RegisterRouter(loginHandler: loginHandler)
         
         

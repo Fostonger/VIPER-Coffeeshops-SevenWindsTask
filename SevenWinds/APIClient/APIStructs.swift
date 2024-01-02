@@ -17,6 +17,8 @@ struct AuthResponse: Decodable {
     let tokenLifetime: Int32?
 }
 
+struct EmptyType: Codable { }
+
 struct BigDecimal: Decodable {
     
 }
@@ -37,4 +39,10 @@ struct LocationMenuItem: Decodable {
     let name: String
     let imageURL: URL?
     let price: Int32?
+}
+
+struct MenuItemPresentable {
+    let item: LocationMenuItem
+    let imageData: Data?
+    let itemCount: Int
 }

@@ -15,18 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         let appState = UserDefaultAppState(with: UserDefaults.standard)
-        let apiClient = SevenWindsAPIClient(with: AF, token: appState.token)
+        let apiClient = SevenWindsAPIClient(with: AF, credentialsProvider: appState)
         
         window = UIWindow(windowScene: scene)
-        window?.backgroundColor = .white
+        window?.backgroundColor = .red
         
-        let loginHandler: (Credentials) -> () = { _ in
-            let VC = UIViewController()
-            VC.view.backgroundColor = .red
-            self.window?.rootViewController = VC
+        let loginHandler: (Credentials) -> () = { [unowned self] _ in
+            self.window?.rootViewController = CoffeeshopsListRouter.createModule(apiClient: apiClient,
+                                                                            credService: appState)
         }
         
-        window?.rootViewController = LoginRouter.createModule(loginHandler: loginHandler, apiClient: apiClient, credService: appState)
+        if let credentials = appState.userCredentials {
+            loginHandler(credentials)
+        } else {
+            window?.rootViewController = LoginRouter.createModule(loginHandler: loginHandler,
+                                                                  apiClient: apiClient,
+                                                                  credService: appState)
+        }
+        
         window?.makeKeyAndVisible()
     }
 }
