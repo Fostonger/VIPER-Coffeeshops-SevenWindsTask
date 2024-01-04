@@ -45,6 +45,11 @@ struct LocationPoint: Decodable {
             )
         }
     }
+    
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }
 
 struct Location: Decodable {

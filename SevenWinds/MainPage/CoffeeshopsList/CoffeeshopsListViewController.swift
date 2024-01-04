@@ -48,6 +48,7 @@ class CoffeeshopsListViewController: UIViewController {
         openMapViewButton.addTarget(self, action: #selector(openMapView), for: .touchUpInside)
         
         title = MainPageLocalization.nearbyLocationsTitle.localized
+        openMapViewButton.setTitle(MainPageLocalization.onMapButtonTitile.localized, for: .normal)
     }
     
     @objc private func openMapView() {
@@ -67,7 +68,7 @@ extension CoffeeshopsListViewController: UITableViewDelegate, UITableViewDataSou
               let location = presenter?.locationForRow(indexPath.row) else {
             return UITableViewCell()
         }
-        cell.setupView(with: location)
+        cell.setupView(with: location, distance: presenter?.distanceToPoint(location.point))
         return cell
     }
     

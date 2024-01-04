@@ -5,6 +5,8 @@ protocol CoffeeshopsListViewToPresenterProtocol: AnyObject {
     var interactor: CoffeeshopsListPresenterToInteractorProtocol? { get }
     var router: CoffeeshopsListPresenterToRouterProtocol? { get }
     
+    func distanceToPoint(_ point: LocationPoint) -> Int?
+    
     func viewDidLoad()
     
     func numberOfRowsInSection() -> Int

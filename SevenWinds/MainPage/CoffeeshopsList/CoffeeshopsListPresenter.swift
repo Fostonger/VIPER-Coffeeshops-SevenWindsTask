@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import CoreLocation
 
-class CoffeeshopsListPresenter: CoffeeshopsListViewToPresenterProtocol {
+class CoffeeshopsListPresenter: NSObject, CoffeeshopsListViewToPresenterProtocol {
     
     var view: CoffeeshopsListPresenterToViewProtocol?
     var interactor: CoffeeshopsListPresenterToInteractorProtocol?
     var router: CoffeeshopsListPresenterToRouterProtocol?
+    
+    private let locationManager = CLLocationManager()
+    private var userLocation: CLLocation?
     
     func numberOfRowsInSection() -> Int {
         interactor?.getCoffeeshopsCount() ?? 0
@@ -24,6 +28,7 @@ class CoffeeshopsListPresenter: CoffeeshopsListViewToPresenterProtocol {
     func viewDidLoad() {
         view?.showHUD()
         interactor?.loadCoffeeshops()
+        setupLocation()
     }
     
     func didSelectRowAt(index: Int) {
@@ -40,6 +45,30 @@ class CoffeeshopsListPresenter: CoffeeshopsListViewToPresenterProtocol {
     
     func openMapView() {
         router?.pushToMapView(on: view!, with: interactor?.getCoffeeshops() ?? [])
+    }
+    
+    func distanceToPoint(_ point: LocationPoint) -> Int? {
+        guard let userLocation = userLocation else { return nil }
+        let pointToLocation = CLLocation(latitude: point.latitude, longitude: point.longitude)
+        return Int(pointToLocation.distance(from: userLocation).magnitude)
+    }
+    
+    private func setupLocation() {
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+}
+
+extension CoffeeshopsListPresenter: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue = manager.location else { return }
+        userLocation = locValue
+        view?.onFetchCoffeeshopsSuccess()
     }
 }
 
