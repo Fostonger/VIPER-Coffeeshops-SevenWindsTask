@@ -1,23 +1,7 @@
 {
   "sourceLanguage" : "ru",
   "strings" : {
-    "Coffeeshop distance" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "meters from you"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "м от вас"
-          }
-        }
-      }
-    },
-    "Confirm password" : {
+    "auth.confirmPassword" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -34,7 +18,7 @@
         }
       }
     },
-    "Email" : {
+    "auth.email" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -51,7 +35,7 @@
         }
       }
     },
-    "Login button" : {
+    "auth.loginButton" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -68,7 +52,7 @@
         }
       }
     },
-    "Login title" : {
+    "auth.loginTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -85,56 +69,7 @@
         }
       }
     },
-    "Menu" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Menu"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Меню"
-          }
-        }
-      }
-    },
-    "Nearby coffeeshops" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nearby coffeeshops"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ближайшие кофейни"
-          }
-        }
-      }
-    },
-    "On map" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show on map"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "На карте"
-          }
-        }
-      }
-    },
-    "Open registration" : {
+    "auth.openRegister" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -151,7 +86,7 @@
         }
       }
     },
-    "Password" : {
+    "auth.password" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -168,24 +103,7 @@
         }
       }
     },
-    "price" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "rub"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "руб"
-          }
-        }
-      }
-    },
-    "Register button" : {
+    "auth.registerButton" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -202,7 +120,7 @@
         }
       }
     },
-    "Register title" : {
+    "auth.registerTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -215,6 +133,156 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Регистрация"
+          }
+        }
+      }
+    },
+    "mainPage.buyButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy items"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оплатить"
+          }
+        }
+      }
+    },
+    "mainPage.buyViewTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your order"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш заказ"
+          }
+        }
+      }
+    },
+    "mainPage.coffeeshopDistance.%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld meters from you"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld м от вас"
+          }
+        }
+      }
+    },
+    "mainPage.menuTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Меню"
+          }
+        }
+      }
+    },
+    "mainPage.nearbyCoffeeTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nearby coffeeshops"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ближайшие кофейни"
+          }
+        }
+      }
+    },
+    "mainPage.onMapButton" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show on map"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На карте"
+          }
+        }
+      }
+    },
+    "mainPage.openBuyViewButton" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to payment"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перейти к оплате"
+          }
+        }
+      }
+    },
+    "mainPage.price.%lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld rub"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld руб"
+          }
+        }
+      }
+    },
+    "mainPage.waitTime.%lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your order will be done in %lld minutes!\nThank you for choosing us!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Время ожидания заказа %lld минут!\nСпасибо, что выбрали нас!"
           }
         }
       }

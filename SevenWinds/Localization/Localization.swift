@@ -20,44 +20,56 @@ enum LoginLocalization {
     var localized: String {
         switch self {
         case .registerTitle:
-            String(localized: "Register title")
+            String(localized: "auth.registerTitle")
         case .loginTitle:
-            String(localized: "Login title")
+            String(localized: "auth.loginTitle")
         case .registerButtonTitle:
-            String(localized: "Register button")
+            String(localized: "auth.registerButton")
         case .loginButtonTitle:
-            String(localized: "Login button")
+            String(localized: "auth.loginButton")
         case .password:
-            String(localized: "Password")
+            String(localized: "auth.password")
         case .email:
-            String(localized: "Email")
+            String(localized: "auth.email")
         case .confirmPassword:
-            String(localized: "Confirm password")
+            String(localized: "auth.confirmPassword")
         case .createAccount:
-            String(localized: "Open registration")
+            String(localized: "auth.openRegister")
         }
     }
 }
 
 enum MainPageLocalization {
-    case distance
+    case distance(meters: Int)
     case nearbyLocationsTitle
     case onMapButtonTitile
     case menuTitle
-    case price
+    case price(rub: Int)
+    case waitTime(waitTime: Int)
+    case buyButtonTitle
+    case buyViewTitle
+    case openPaymentButton
     
     var localized: String {
         switch self {
-        case .distance:
-            String(localized: "Coffeeshop distance")
+        case .distance(let meters):
+            String(localized: "mainPage.coffeeshopDistance.\(meters)")
         case .nearbyLocationsTitle:
-            String(localized: "Nearby coffeeshops")
+            String(localized: "mainPage.nearbyCoffeeTitle")
         case .onMapButtonTitile:
-            String(localized: "On map")
+            String(localized: "mainPage.onMapButton")
         case .menuTitle:
-            String(localized: "Menu")
-        case .price:
-            String(localized: "price")
+            String(localized: "mainPage.menuTitle")
+        case .price(let rub):
+            String(localized: "mainPage.price.\(rub)")
+        case .waitTime(let waitTime):
+            String(localized: "mainPage.waitTime.\(waitTime)")
+        case .buyButtonTitle:
+            String(localized: "mainPage.buyButton")
+        case .buyViewTitle:
+            String(localized: "mainPage.buyViewTitle")
+        case .openPaymentButton:
+            String(localized: "mainPage.openBuyViewButton")
         }
     }
 }

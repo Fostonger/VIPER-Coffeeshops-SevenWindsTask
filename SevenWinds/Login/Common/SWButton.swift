@@ -11,6 +11,7 @@ class SWButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        isEnabled = true
     }
     
     override var isEnabled: Bool {
@@ -34,7 +35,7 @@ class SWButton: UIButton {
     }
     
     private func setupUIDisabled() {
-        backgroundColor = .sevenWindsDisabledBrown
+        backgroundColor = SevenWindsColors.disabledBrown.uiColor
         tintColor = SevenWindsColors.lightBrown.uiColor
         setupUI()
     }

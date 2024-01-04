@@ -12,6 +12,7 @@ enum SevenWindsColors {
     case lightBrown
     case darkBrown
     case secondaryBrown
+    case disabledBrown
     
     var uiColor: UIColor {
         UIColor(named: uiColorName) ?? .black
@@ -27,6 +28,8 @@ enum SevenWindsColors {
             "SevenWindsDarkBrown"
         case .secondaryBrown:
             "SevenWindsSecondaryBrown"
+        case .disabledBrown:
+            "SevenWindsDisabledBrown"
         }
     }
 }

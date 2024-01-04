@@ -34,7 +34,11 @@ class MenuDetailsRouter: MenuDetailsPresenterToRouterProtocol {
         self.credService = credService
     }
     
-    func pushToMapView(on view: MenuDetailsPresenterToViewProtocol, with locations: [Location]) {
-        print("TODO: map view")
+    func pushToBuyView(on view: MenuDetailsPresenterToViewProtocol, with items: [MenuItemPresentable]) {
+        let srcVC = view as! UIViewController
+        let dstVC = BuyItemsRouter.createModule(items: items,
+                                                apiClient: apiClient,
+                                                credService: credService)
+        srcVC.navigationController?.pushViewController(dstVC, animated: true)
     }
 }

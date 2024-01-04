@@ -38,6 +38,7 @@ class CoffeeshopsListRouter: CoffeeshopsListPresenterToRouterProtocol {
                 NSAttributedString.Key.foregroundColor: SevenWindsColors.brown.uiColor
             ]
         }
+        navigationController.navigationItem.backButtonDisplayMode = .minimal
         
         return navigationController
     }

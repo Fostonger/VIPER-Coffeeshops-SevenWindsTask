@@ -12,6 +12,8 @@ protocol MenuDetailsViewToPresenterProtocol: AnyObject {
     
     func didAddItem(index: Int)
     func didRemoveItem(index: Int)
+    
+    func openBuyView()
 }
 
 protocol MenuDetailsPresenterToViewProtocol: AnyObject {
@@ -39,5 +41,5 @@ protocol MenuDetailsInteractorToPresenter: AnyObject {
 
 protocol MenuDetailsPresenterToRouterProtocol: AnyObject {
     static func createModule(apiClient: APIClient, credService: AppStateService, locationId: Int32) -> UIViewController
-    func pushToMapView(on view: MenuDetailsPresenterToViewProtocol, with locations: [Location])
+    func pushToBuyView(on view: MenuDetailsPresenterToViewProtocol, with items: [MenuItemPresentable])
 }

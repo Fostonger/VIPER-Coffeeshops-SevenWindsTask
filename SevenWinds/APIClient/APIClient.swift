@@ -48,30 +48,19 @@ final class SevenWindsAPIClient: APIClient {
     private func _sendRequest<T: Encodable, U: Decodable>(with endpoint: Endpoint, parameters: T? = nil, responseType: U.Type, completion: @escaping (Result<U, AFError>) -> Void) {
         // Единственный false, по которому можно отлететь - auth required, но token == nil
         guard !endpoint.authRequired || credentialsProvider.token != nil else {
-            completion(.failure(.sessionTaskFailed(error: SevenWindsAPIError.authNotProvided)))
-            return
-        }
-        
-        if let expired = credentialsProvider.expirationDate, expired <= .now {
-            completion(.failure(.sessionTaskFailed(error: SevenWindsAPIError.authNotProvided)))
+            withTryAuth { [weak self] in
+                if self?.credentialsProvider.token == nil {
+                    completion(.failure(.sessionTaskFailed(error: SevenWindsAPIError.authNotProvided)))
+                }
+            }
             return
         }
         
         var headers = endpoint.headers
-        var additionalCompletion = completion
         
         // был guard, на котором проверили, что если нужен - токен точно есть
         if endpoint.authRequired {
             headers.add(.authorization(bearerToken: credentialsProvider.token!))
-        } else {
-            // если токен был нужен, но его не оказалось - пробуем подцепить из респонсов
-            additionalCompletion = { [weak self] result in
-                if case .success = result,
-                   let auth = try? result.get() as? AuthResponse {
-                    self?.credentialsProvider.setToken(auth.token, expirationDate: auth.tokenLifetime)
-                }
-                completion(result)
-            }
         }
         
         client.request(baseUrl + endpoint.getEndpoint(),
@@ -85,14 +74,25 @@ final class SevenWindsAPIClient: APIClient {
                 print(String(data: data, encoding: .utf8)!)
             }
             if response.error?.responseCode == 401 {
-                self?.sendRequest(with: AuthEndpoint.login,
-                                  parameters: self?.credentialsProvider.userCredentials,
-                                  responseType: AuthResponse.self) { _ in
+                self?.withTryAuth { [weak self] in
                     self?.sendRequest(with: endpoint, parameters: parameters, responseType: responseType, completion: completion)
                 }
                 return
             }
-            additionalCompletion(response.result)
+            completion(response.result)
+        }
+    }
+    
+    private func withTryAuth(completion: @escaping () -> Void) {
+        credentialsProvider.setToken("", expirationDate: -1)
+        sendRequest(with: AuthEndpoint.login,
+                          parameters: credentialsProvider.userCredentials,
+                          responseType: AuthResponse.self) { [weak self] result in
+            if case .success = result,
+               let auth = try? result.get() {
+                self?.credentialsProvider.setToken(auth.token, expirationDate: auth.tokenLifetime)
+            }
+            completion()
         }
     }
     

@@ -24,6 +24,8 @@ class MenuDetailsViewController: UIViewController {
         return collection
     }()
     
+    private let continueButton = SWButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -33,15 +35,30 @@ class MenuDetailsViewController: UIViewController {
     
     private func setupUI() {
         view.addSubview(collectionView)
+        view.addSubview(continueButton)
         
         collectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(15)
             make.right.equalToSuperview().inset(16)
             make.left.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().inset(15)
         }
         
+        continueButton.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(21)
+            make.right.equalToSuperview().inset(18)
+            make.left.equalToSuperview().offset(19)
+            make.bottom.equalTo(view.snp.bottomMargin)
+            make.height.equalTo(48)
+        }
+        
+        continueButton.setTitle(MainPageLocalization.openPaymentButton.localized, for: .normal)
+        continueButton.addTarget(self, action: #selector(openBuyView), for: .touchUpInside)
+        
         title = MainPageLocalization.menuTitle.localized
+    }
+    
+    @objc private func openBuyView() {
+        presenter?.openBuyView()
     }
 }
 

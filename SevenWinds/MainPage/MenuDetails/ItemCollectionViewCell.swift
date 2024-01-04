@@ -81,7 +81,7 @@ class ItemCollectionViewCell: UICollectionViewCell, BoundingWidthAdoptable {
     
     func setupView(with item: MenuItemPresentable) {
         titleLabel.text = item.item.name
-        priceLabel.text = "\(item.item.price ?? 0) " + MainPageLocalization.price.localized
+        priceLabel.text = MainPageLocalization.price(rub: Int(item.item.price ?? 0)).localized
         if let data  = item.imageData {
             imageView.image = UIImage(data: data)
         } else {
@@ -151,7 +151,6 @@ class ItemCollectionViewCell: UICollectionViewCell, BoundingWidthAdoptable {
         plusButton.snp.makeConstraints { make in
             make.left.equalTo(priceLabel.snp.right).offset(3)
             make.bottom.equalToSuperview().inset(7)
-            make.top.equalTo(titleLabel.snp.bottom).offset(9)
             make.height.width.equalTo(24)
         }
         
@@ -165,7 +164,6 @@ class ItemCollectionViewCell: UICollectionViewCell, BoundingWidthAdoptable {
         minusButton.snp.makeConstraints { make in
             make.left.equalTo(countLabel.snp.right).offset(9)
             make.bottom.equalToSuperview().inset(7)
-            make.top.equalTo(titleLabel.snp.bottom).offset(9)
             make.right.equalToSuperview().inset(5)
             make.height.width.equalTo(24)
         }

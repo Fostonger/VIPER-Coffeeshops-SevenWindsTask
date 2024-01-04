@@ -45,7 +45,7 @@ class CoffeeshopTableViewCell: UITableViewCell {
     func setupView(with location: Location, distance: Int? = nil) {
         titleLabel.text = location.name
         if let distance = distance {
-            distanceLabel.text = "\(distance) " + MainPageLocalization.distance.localized
+            distanceLabel.text = MainPageLocalization.distance(meters: distance).localized
         }
     }
     

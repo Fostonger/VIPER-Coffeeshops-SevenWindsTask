@@ -50,6 +50,10 @@ class MenuDetailsPresenter: MenuDetailsViewToPresenterProtocol {
                                            itemCount: items[index].itemCount - 1)
         view?.updateItem(row: index)
     }
+    
+    func openBuyView() {
+        router?.pushToBuyView(on: view!, with: items.filter{ $0.itemCount > 0 })
+    }
 }
 
 extension MenuDetailsPresenter: MenuDetailsInteractorToPresenter {

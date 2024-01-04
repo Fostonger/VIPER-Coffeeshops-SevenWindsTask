@@ -58,6 +58,12 @@
 		05EED54E2B433AAA00C2631D /* MenuDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5482B433AA900C2631D /* MenuDetailsPresenter.swift */; };
 		05EED54F2B433AAA00C2631D /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5492B433AAA00C2631D /* ItemCollectionViewCell.swift */; };
 		05EED5512B43A80800C2631D /* SevenWinds+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5502B43A80800C2631D /* SevenWinds+Image.swift */; };
+		05EED55D2B45DF1300C2631D /* BuyItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5572B45DF1300C2631D /* BuyItemsTableViewCell.swift */; };
+		05EED55E2B45DF1300C2631D /* BuyItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5582B45DF1300C2631D /* BuyItemsRouter.swift */; };
+		05EED55F2B45DF1300C2631D /* BuyItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5592B45DF1300C2631D /* BuyItemsInteractor.swift */; };
+		05EED5602B45DF1300C2631D /* BuyItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED55A2B45DF1300C2631D /* BuyItemsPresenter.swift */; };
+		05EED5612B45DF1300C2631D /* BuyItemsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED55B2B45DF1300C2631D /* BuyItemsContracts.swift */; };
+		05EED5622B45DF1300C2631D /* BuyItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED55C2B45DF1300C2631D /* BuyItemsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +119,12 @@
 		05EED5482B433AA900C2631D /* MenuDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailsPresenter.swift; sourceTree = "<group>"; };
 		05EED5492B433AAA00C2631D /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		05EED5502B43A80800C2631D /* SevenWinds+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SevenWinds+Image.swift"; sourceTree = "<group>"; };
+		05EED5572B45DF1300C2631D /* BuyItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsTableViewCell.swift; sourceTree = "<group>"; };
+		05EED5582B45DF1300C2631D /* BuyItemsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsRouter.swift; sourceTree = "<group>"; };
+		05EED5592B45DF1300C2631D /* BuyItemsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsInteractor.swift; sourceTree = "<group>"; };
+		05EED55A2B45DF1300C2631D /* BuyItemsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsPresenter.swift; sourceTree = "<group>"; };
+		05EED55B2B45DF1300C2631D /* BuyItemsContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsContracts.swift; sourceTree = "<group>"; };
+		05EED55C2B45DF1300C2631D /* BuyItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +269,7 @@
 		05B895062B3EEF04006301A2 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				05EED5562B45DE3700C2631D /* BuyItemsModule */,
 				05EED5432B433A8300C2631D /* MenuDetails */,
 				05B895072B3EEF12006301A2 /* CoffeeshopsList */,
 			);
@@ -287,6 +300,19 @@
 				05EED5442B433AA900C2631D /* MenuDetailsContracts.swift */,
 			);
 			path = MenuDetails;
+			sourceTree = "<group>";
+		};
+		05EED5562B45DE3700C2631D /* BuyItemsModule */ = {
+			isa = PBXGroup;
+			children = (
+				05EED55B2B45DF1300C2631D /* BuyItemsContracts.swift */,
+				05EED5592B45DF1300C2631D /* BuyItemsInteractor.swift */,
+				05EED55A2B45DF1300C2631D /* BuyItemsPresenter.swift */,
+				05EED5582B45DF1300C2631D /* BuyItemsRouter.swift */,
+				05EED5572B45DF1300C2631D /* BuyItemsTableViewCell.swift */,
+				05EED55C2B45DF1300C2631D /* BuyItemsViewController.swift */,
+			);
+			path = BuyItemsModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +410,7 @@
 				05EED54A2B433AAA00C2631D /* MenuDetailsContracts.swift in Sources */,
 				05B894D12B39EA65006301A2 /* RegisterViewController.swift in Sources */,
 				05B894D22B39EA65006301A2 /* RegisterInteractor.swift in Sources */,
+				05EED5602B45DF1300C2631D /* BuyItemsPresenter.swift in Sources */,
 				05B894C42B39EA31006301A2 /* LoginPresenter.swift in Sources */,
 				05EED5512B43A80800C2631D /* SevenWinds+Image.swift in Sources */,
 				05EED53F2B3F7C2E00C2631D /* CoffeeshopsListInteractor.swift in Sources */,
@@ -394,17 +421,22 @@
 				05B894D32B39EA65006301A2 /* RegisterRouter.swift in Sources */,
 				05B894A22B39E85A006301A2 /* ViewController.swift in Sources */,
 				05B894DE2B3AEF05006301A2 /* AppState.swift in Sources */,
+				05EED5612B45DF1300C2631D /* BuyItemsContracts.swift in Sources */,
 				05B894E02B3AF372006301A2 /* SevenWindsAPIError.swift in Sources */,
 				05B894C52B39EA31006301A2 /* LoginContracts.swift in Sources */,
 				05EED54B2B433AAA00C2631D /* MenuDetailsInteractor.swift in Sources */,
 				05B894D82B39EC2B006301A2 /* APIEndpoint.swift in Sources */,
 				05B894DA2B3A0BD7006301A2 /* APIClient.swift in Sources */,
+				05EED55F2B45DF1300C2631D /* BuyItemsInteractor.swift in Sources */,
+				05EED5622B45DF1300C2631D /* BuyItemsViewController.swift in Sources */,
 				05B895092B3EEF38006301A2 /* CoffeshopsListContracts.swift in Sources */,
+				05EED55E2B45DF1300C2631D /* BuyItemsRouter.swift in Sources */,
 				05B895002B3B5ABE006301A2 /* SWTextField.swift in Sources */,
 				05B894EB2B3B4448006301A2 /* UIFont+SevenWinds.swift in Sources */,
 				05EED54F2B433AAA00C2631D /* ItemCollectionViewCell.swift in Sources */,
 				05EED5422B3F7C2E00C2631D /* CoffeeshopTableViewCell.swift in Sources */,
 				05B8950B2B3EF226006301A2 /* CoffeeshopsListViewController.swift in Sources */,
+				05EED55D2B45DF1300C2631D /* BuyItemsTableViewCell.swift in Sources */,
 				05B894D42B39EA65006301A2 /* RegisterPresenter.swift in Sources */,
 				05EED5412B3F7C2E00C2631D /* CoffeeshopsListRouter.swift in Sources */,
 				05EED54D2B433AAA00C2631D /* MenuDetailsViewController.swift in Sources */,
