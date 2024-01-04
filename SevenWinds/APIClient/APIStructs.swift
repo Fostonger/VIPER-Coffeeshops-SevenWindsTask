@@ -19,13 +19,32 @@ struct AuthResponse: Decodable {
 
 struct EmptyType: Codable { }
 
-struct BigDecimal: Decodable {
-    
-}
-
 struct LocationPoint: Decodable {
-    let latitude: BigDecimal
-    let longitude: BigDecimal
+    let latitude: Double
+    let longitude: Double
+    
+    private enum CodingKeys: String, CodingKey {
+        case latitude
+        case longitude
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let latitudeString = try container.decode(String.self, forKey: .latitude)
+        let longitudeString = try container.decode(String.self, forKey: .longitude)
+        
+        if let latitude = Double(latitudeString), let longitude = Double(longitudeString) {
+            self.latitude = latitude
+            self.longitude = longitude
+        } else {
+            throw DecodingError.dataCorruptedError(
+                forKey: .latitude,
+                in: container,
+                debugDescription: "Invalid latitude or longitude format"
+            )
+        }
+    }
 }
 
 struct Location: Decodable {

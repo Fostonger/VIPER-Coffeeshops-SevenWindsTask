@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import YandexMapsMobile
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,6 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
+        UINavigationBar.appearance().tintColor = SevenWindsColors.brown.uiColor
+        
         let appState = UserDefaultAppState(with: UserDefaults.standard)
         let apiClient = SevenWindsAPIClient(with: AF, credentialsProvider: appState)
         

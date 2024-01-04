@@ -49,7 +49,12 @@ class CoffeeshopsListRouter: CoffeeshopsListPresenterToRouterProtocol {
     }
     
     func pushToMapView(on view: CoffeeshopsListPresenterToViewProtocol, with locations: [Location]) {
-        print("TODO: map view")
+        guard let vc = view as? UIViewController else {
+            print("Unexpectedly found nil in location's Id field")
+            return
+        }
+        let detailsVC = CoffeeshopsListMapViewRouter.createModule(locations: locations, apiClient: apiClient, credService: credService)
+        vc.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
     func pushToLocationMenu(on view: CoffeeshopsListPresenterToViewProtocol, with location: Location) {

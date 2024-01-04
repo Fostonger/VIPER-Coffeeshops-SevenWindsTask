@@ -88,9 +88,11 @@ final class SevenWindsAPIClient: APIClient {
         sendRequest(with: AuthEndpoint.login,
                           parameters: credentialsProvider.userCredentials,
                           responseType: AuthResponse.self) { [weak self] result in
+            print("result is \(result)")
             if case .success = result,
                let auth = try? result.get() {
                 self?.credentialsProvider.setToken(auth.token, expirationDate: auth.tokenLifetime)
+                print("Set new token!")
             }
             completion()
         }

@@ -41,4 +41,8 @@ class CoffeeshopsListInteractor: CoffeeshopsListPresenterToInteractorProtocol {
         locations.count
     }
     
+    func getCoffeeshops() -> [Location] {
+        locations
+    }
+    
 }

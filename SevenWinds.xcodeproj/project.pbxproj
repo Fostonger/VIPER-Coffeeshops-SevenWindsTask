@@ -64,6 +64,11 @@
 		05EED5602B45DF1300C2631D /* BuyItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED55A2B45DF1300C2631D /* BuyItemsPresenter.swift */; };
 		05EED5612B45DF1300C2631D /* BuyItemsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED55B2B45DF1300C2631D /* BuyItemsContracts.swift */; };
 		05EED5622B45DF1300C2631D /* BuyItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED55C2B45DF1300C2631D /* BuyItemsViewController.swift */; };
+		05EED56D2B475C2500C2631D /* CoffeeshopsListMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5672B475C2500C2631D /* CoffeeshopsListMapViewController.swift */; };
+		05EED56E2B475C2500C2631D /* CoffeeshopsListMapViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5682B475C2500C2631D /* CoffeeshopsListMapViewRouter.swift */; };
+		05EED56F2B475C2500C2631D /* CoffeeshopsListMapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED5692B475C2500C2631D /* CoffeeshopsListMapViewPresenter.swift */; };
+		05EED5712B475C2500C2631D /* CoffeshopsListMapViewContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EED56B2B475C2500C2631D /* CoffeshopsListMapViewContracts.swift */; };
+		05EED5732B47642800C2631D /* Pods_SevenWinds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E558889AE4F50B177CC9F39 /* Pods_SevenWinds.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +130,13 @@
 		05EED55A2B45DF1300C2631D /* BuyItemsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsPresenter.swift; sourceTree = "<group>"; };
 		05EED55B2B45DF1300C2631D /* BuyItemsContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsContracts.swift; sourceTree = "<group>"; };
 		05EED55C2B45DF1300C2631D /* BuyItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyItemsViewController.swift; sourceTree = "<group>"; };
+		05EED5672B475C2500C2631D /* CoffeeshopsListMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListMapViewController.swift; sourceTree = "<group>"; };
+		05EED5682B475C2500C2631D /* CoffeeshopsListMapViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListMapViewRouter.swift; sourceTree = "<group>"; };
+		05EED5692B475C2500C2631D /* CoffeeshopsListMapViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeshopsListMapViewPresenter.swift; sourceTree = "<group>"; };
+		05EED56B2B475C2500C2631D /* CoffeshopsListMapViewContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeshopsListMapViewContracts.swift; sourceTree = "<group>"; };
+		0E558889AE4F50B177CC9F39 /* Pods_SevenWinds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SevenWinds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A332191A21F7B58D30A7E1FB /* Pods-SevenWinds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SevenWinds.release.xcconfig"; path = "Target Support Files/Pods-SevenWinds/Pods-SevenWinds.release.xcconfig"; sourceTree = "<group>"; };
+		D94217274E81D1C301344E6A /* Pods-SevenWinds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SevenWinds.debug.xcconfig"; path = "Target Support Files/Pods-SevenWinds/Pods-SevenWinds.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EED5732B47642800C2631D /* Pods_SevenWinds.framework in Frameworks */,
 				05EED53A2B3F7C0700C2631D /* PKHUD in Frameworks */,
 				05B894B32B39E8FB006301A2 /* Alamofire in Frameworks */,
 				05B894B62B39E92F006301A2 /* SnapKit in Frameworks */,
@@ -146,6 +159,8 @@
 			children = (
 				05B8949C2B39E85A006301A2 /* SevenWinds */,
 				05B8949B2B39E85A006301A2 /* Products */,
+				293264A9BFC63CC173DECF18 /* Pods */,
+				97AFB35F59439DA7BA7E18F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,6 +284,7 @@
 		05B895062B3EEF04006301A2 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				05EED5662B475C2500C2631D /* CoffeeshopListMapView */,
 				05EED5562B45DE3700C2631D /* BuyItemsModule */,
 				05EED5432B433A8300C2631D /* MenuDetails */,
 				05B895072B3EEF12006301A2 /* CoffeeshopsList */,
@@ -315,6 +331,34 @@
 			path = BuyItemsModule;
 			sourceTree = "<group>";
 		};
+		05EED5662B475C2500C2631D /* CoffeeshopListMapView */ = {
+			isa = PBXGroup;
+			children = (
+				05EED5672B475C2500C2631D /* CoffeeshopsListMapViewController.swift */,
+				05EED5682B475C2500C2631D /* CoffeeshopsListMapViewRouter.swift */,
+				05EED5692B475C2500C2631D /* CoffeeshopsListMapViewPresenter.swift */,
+				05EED56B2B475C2500C2631D /* CoffeshopsListMapViewContracts.swift */,
+			);
+			path = CoffeeshopListMapView;
+			sourceTree = "<group>";
+		};
+		293264A9BFC63CC173DECF18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D94217274E81D1C301344E6A /* Pods-SevenWinds.debug.xcconfig */,
+				A332191A21F7B58D30A7E1FB /* Pods-SevenWinds.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		97AFB35F59439DA7BA7E18F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E558889AE4F50B177CC9F39 /* Pods_SevenWinds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,9 +366,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05B894AE2B39E85C006301A2 /* Build configuration list for PBXNativeTarget "SevenWinds" */;
 			buildPhases = (
+				0BABCAB01FF3EA060AA699AF /* [CP] Check Pods Manifest.lock */,
 				05B894962B39E85A006301A2 /* Sources */,
 				05B894972B39E85A006301A2 /* Frameworks */,
 				05B894982B39E85A006301A2 /* Resources */,
+				CA0965548E913672DEFCE299 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -401,6 +447,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BABCAB01FF3EA060AA699AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SevenWinds-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA0965548E913672DEFCE299 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SevenWinds/Pods-SevenWinds-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SevenWinds/Pods-SevenWinds-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SevenWinds/Pods-SevenWinds-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05B894962B39E85A006301A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -422,6 +510,7 @@
 				05B894A22B39E85A006301A2 /* ViewController.swift in Sources */,
 				05B894DE2B3AEF05006301A2 /* AppState.swift in Sources */,
 				05EED5612B45DF1300C2631D /* BuyItemsContracts.swift in Sources */,
+				05EED56F2B475C2500C2631D /* CoffeeshopsListMapViewPresenter.swift in Sources */,
 				05B894E02B3AF372006301A2 /* SevenWindsAPIError.swift in Sources */,
 				05B894C52B39EA31006301A2 /* LoginContracts.swift in Sources */,
 				05EED54B2B433AAA00C2631D /* MenuDetailsInteractor.swift in Sources */,
@@ -438,11 +527,14 @@
 				05B8950B2B3EF226006301A2 /* CoffeeshopsListViewController.swift in Sources */,
 				05EED55D2B45DF1300C2631D /* BuyItemsTableViewCell.swift in Sources */,
 				05B894D42B39EA65006301A2 /* RegisterPresenter.swift in Sources */,
+				05EED5712B475C2500C2631D /* CoffeshopsListMapViewContracts.swift in Sources */,
+				05EED56E2B475C2500C2631D /* CoffeeshopsListMapViewRouter.swift in Sources */,
 				05EED5412B3F7C2E00C2631D /* CoffeeshopsListRouter.swift in Sources */,
 				05EED54D2B433AAA00C2631D /* MenuDetailsViewController.swift in Sources */,
 				05EED54E2B433AAA00C2631D /* MenuDetailsPresenter.swift in Sources */,
 				05B8949E2B39E85A006301A2 /* AppDelegate.swift in Sources */,
 				05B894C32B39EA31006301A2 /* LoginViewController.swift in Sources */,
+				05EED56D2B475C2500C2631D /* CoffeeshopsListMapViewController.swift in Sources */,
 				05B894C62B39EA31006301A2 /* LoginRouter.swift in Sources */,
 				05B894DC2B3A0C10006301A2 /* APIStructs.swift in Sources */,
 				05B894D52B39EA65006301A2 /* RegisterContracts.swift in Sources */,
@@ -598,12 +690,14 @@
 		};
 		05B894AF2B39E85C006301A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D94217274E81D1C301344E6A /* Pods-SevenWinds.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K6SG3GJ9A3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SevenWinds/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -611,6 +705,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,12 +721,14 @@
 		};
 		05B894B02B39E85C006301A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A332191A21F7B58D30A7E1FB /* Pods-SevenWinds.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K6SG3GJ9A3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SevenWinds/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -639,6 +736,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

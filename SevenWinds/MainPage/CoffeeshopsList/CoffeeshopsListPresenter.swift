@@ -37,6 +37,10 @@ class CoffeeshopsListPresenter: CoffeeshopsListViewToPresenterProtocol {
     func deselectRowAt(index: Int) {
         view?.deselectRowAt(row: index)
     }
+    
+    func openMapView() {
+        router?.pushToMapView(on: view!, with: interactor?.getCoffeeshops() ?? [])
+    }
 }
 
 extension CoffeeshopsListPresenter: CoffeeshopsListInteractorToPresenter {

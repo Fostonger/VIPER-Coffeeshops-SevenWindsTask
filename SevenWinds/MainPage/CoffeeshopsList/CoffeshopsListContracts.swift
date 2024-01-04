@@ -12,6 +12,8 @@ protocol CoffeeshopsListViewToPresenterProtocol: AnyObject {
     
     func didSelectRowAt(index: Int)
     func deselectRowAt(index: Int)
+    
+    func openMapView()
 }
 
 protocol CoffeeshopsListPresenterToViewProtocol: AnyObject {
@@ -30,6 +32,7 @@ protocol CoffeeshopsListPresenterToInteractorProtocol: AnyObject {
     func loadCoffeeshops()
     func retrieveCoffeeshop(at index: Int) -> Location?
     func getCoffeeshopsCount() -> Int
+    func getCoffeeshops() -> [Location]
 }
 
 protocol CoffeeshopsListInteractorToPresenter: AnyObject {

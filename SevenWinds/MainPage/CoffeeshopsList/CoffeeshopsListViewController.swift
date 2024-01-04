@@ -18,6 +18,8 @@ class CoffeeshopsListViewController: UIViewController {
         return table
     }()
     
+    private let openMapViewButton = SWButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -27,15 +29,29 @@ class CoffeeshopsListViewController: UIViewController {
     
     private func setupUI() {
         view.addSubview(tableView)
+        view.addSubview(openMapViewButton)
         
         tableView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(15)
             make.right.equalToSuperview().inset(16)
             make.left.equalToSuperview().offset(10)
-            make.bottom.equalToSuperview().inset(15)
         }
         
+        openMapViewButton.snp.makeConstraints { make in
+            make.top.equalTo(tableView.snp.bottom).offset(15)
+            make.right.equalToSuperview().inset(19)
+            make.left.equalToSuperview().offset(19)
+            make.bottom.equalTo(view.snp.bottomMargin).inset(15)
+            make.height.equalTo(48)
+        }
+        
+        openMapViewButton.addTarget(self, action: #selector(openMapView), for: .touchUpInside)
+        
         title = MainPageLocalization.nearbyLocationsTitle.localized
+    }
+    
+    @objc private func openMapView() {
+        presenter?.openMapView()
     }
 }
 
