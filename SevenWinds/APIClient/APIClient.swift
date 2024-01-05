@@ -75,7 +75,7 @@ final class SevenWindsAPIClient: APIClient {
             }
             if response.error?.responseCode == 401 {
                 self?.withTryAuth { [weak self] in
-                    self?.sendRequest(with: endpoint, parameters: parameters, responseType: responseType, completion: completion)
+                    self?._sendRequest(with: endpoint, parameters: parameters, responseType: responseType, completion: completion)
                 }
                 return
             }
